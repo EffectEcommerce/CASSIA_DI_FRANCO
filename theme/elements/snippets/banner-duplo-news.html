@@ -1,0 +1,50 @@
+{% set bannersList = [] %}
+    {% for slide in banners.extra2.slides %}
+        {% set slideLink = slide.link %}
+        {% set slideTarget = slide.target %}
+        {% set slideImage = slide.image %}
+        {% set slideLabel = slide.label %}
+        {% set slideHeight = slide.height %}
+        {% set slideWidth = slide.width %}
+        
+        {% set bannersList = bannersList | merge([{"slide_link": slideLink, "slide_target": slideTarget, "slide_image": slideImage, "slide_label": slideLabel, "slide_height": slideHeight, "slide_width": slideWidth }]) %}
+    {% endfor %} 
+{% if banners.extra2 %}
+    <div class="banner-duplo-vitrine">
+        <div class="container-banner-duplo-vitrine">
+            <div class="content-txt">
+                <span class="subtittle-banner-duplo">{{ settings.subtitle_banner_txt }}</span>
+                <strong>{{ settings.title_banner_txt }}</strong>
+                <span class="desc-banner-duplo">{{ settings.desc_banner_txt}}</span>
+                <a href="{{ settings.link_banner_txt }}">
+                    <button>
+                        <span class="txt-botao-banner-duplo">VENHA CONFERIR</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="8" viewBox="0 0 11 8" fill="none">
+                            <path d="M10.4381 4.35355C10.6333 4.15829 10.6333 3.84171 10.4381 3.64645L7.2561 0.464466C7.06083 0.269204 6.74425 0.269204 6.54899 0.464466C6.35373 0.659728 6.35373 0.976311 6.54899 1.17157L9.37742 4L6.54899 6.82843C6.35373 7.02369 6.35373 7.34027 6.54899 7.53553C6.74425 7.7308 7.06083 7.7308 7.2561 7.53553L10.4381 4.35355ZM0 4.5H10.0845V3.5H0V4.5Z" fill="white"/>
+                        </svg>
+                    </button>
+                </a>
+            </div>
+            <div class="container-imagem-banner-duplo-vitrine">
+                <div class="content-img" data-position-banner="EXTRA 3 FASE 1">
+                    {% if settings.banner_duplo_link_menor %}
+                        <a href="{{ settings.banner_duplo_link_menor }}">
+                            <img src="{{ bannersList[0].slide_image }}" alt="{{ bannersList[0].slide_label ? bannersList[0].slide_label : 'Banners da sessão banner duplo vitrine'}}" width="{{ bannersList[0].slide_width }}" height="{{ bannersList[0].slide_height }}" loading="lazy">
+                        </a>
+                    {% else %}
+                        <img src="{{ bannersList[0].slide_image }}" alt="{{ bannersList[0].slide_label ? bannersList[0].slide_label : 'Banners da sessão banner duplo vitrine'}}" width="{{ bannersList[0].slide_width }}" height="{{ bannersList[0].slide_height }}" loading="lazy">
+                    {% endif %}
+                </div>
+                <div class="content-img" data-position-banner="EXTRA 3 FASE 2">
+                    {% if settings.banner_duplo_link_maior %}
+                        <a href="{{ settings.banner_duplo_link_maior }}">
+                            <img src="{{ bannersList[1].slide_image }}" alt="{{ bannersList[1].slide_label ? bannersList[1].slide_label : 'Banners da sessão banner duplo vitrine'}}" width="{{ bannersList[1].slide_width }}" height="{{ bannersList[1].slide_height }}" loading="lazy">
+                        </a>
+                    {% else %}
+                        <img src="{{ bannersList[1].slide_image }}" alt="{{ bannersList[1].slide_label ? bannersList[1].slide_label : 'Banners da sessão banner duplo vitrine'}}" width="{{ bannersList[1].slide_width }}" height="{{ bannersList[1].slide_height }}" loading="lazy">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

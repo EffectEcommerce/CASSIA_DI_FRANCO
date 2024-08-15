@@ -1,0 +1,24 @@
+{% set bannersList = [] %}
+
+    {% for slide in banners.title.slides %}
+        {% set slideLink = slide.link %}
+        {% set slideTarget = slide.target %}
+        {% set slideImage = slide.image %}
+        {% set slideLabel = slide.label %}
+        {% set slideHeight = slide.height %}
+        {% set slideWidth = slide.width %}
+        
+        {% set bannersList = bannersList | merge([{"slide_link": slideLink, "slide_target": slideTarget, "slide_image": slideImage, "slide_label": slideLabel, "slide_height": slideHeight, "slide_width": slideWidth }]) %}
+    {% endfor %} 
+{% if banners.title %}
+    {% if bannersList[0].slide_link %}
+        <a class="link-banner-title" href="{{ bannersList[0].slide_link }}" target="{{ bannersList[0].slide_target }}">
+    {% endif %}
+        <picture>
+            <source srcset="{{ bannersList[1].slide_image }}" media="(max-width: 768px)" />
+                <img class="banner-title" src="{{ bannersList[0].slide_image }}" alt="{{ bannersList[0].slide_label }}" width="{{ bannersList[0].slide_width }}" height="{{ bannersList[0].slide_height }}"/>
+        </picture>
+    {% if bannersList[0].slide_link %}        
+        </a>
+    {% endif %}
+{% endif %}

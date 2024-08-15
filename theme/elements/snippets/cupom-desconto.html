@@ -1,0 +1,12 @@
+<div class="coupon-container {{ settings.coupon_side == 'left' ? 'left' : 'rigth' }}">
+    <div id="coupon-open" class="coupon-sidebar">
+        CUPOM
+    </div>
+    <div class="coupon-details">
+        <p>Desconto</p>
+        <h1>{{ settings.porcent_coupon_off }}% OFF</h1>
+        <p>Cupom</p>
+        <h2 id="coupon-code">{{ settings.coupon_name }}</h2>
+        <button id="coupon-copy-btn">COPIAR</button>
+    </div>
+</div>

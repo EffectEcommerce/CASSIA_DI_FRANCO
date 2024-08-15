@@ -1,0 +1,70 @@
+{% set bannersList = [] %}
+    {% for slide in banners.extra4.slides %}
+        {% set slideLink = slide.link %}
+        {% set slideTarget = slide.target %}
+        {% set slideImage = slide.image %}
+        {% set slideLabel = slide.label %}
+        {% set slideHeight = slide.height %}
+        {% set slideWidth = slide.width %}
+        
+        {% set bannersList = bannersList | merge([{"slide_link": slideLink, "slide_target": slideTarget, "slide_image": slideImage, "slide_label": slideLabel, "slide_height": slideHeight, "slide_width": slideWidth }]) %}
+    {% endfor %} 
+{% if banners.extra4 %}
+    <div class="banner-cinco-section">
+        <div class="banner-cinco-container">
+            <div class="content-left">
+                <div class="box-img" data-position-banner="EXTRA 4 FASE 1">
+                    {% if bannersList[0].slide_link %}
+                        <a title="link banner cinco" href="{{ bannersList[0].slide_link }}" target="{{ bannersList[0].slide_target }}">
+                            <img src="{{ bannersList[0].slide_image }}" alt="{{ bannersList[0].slide_label ? bannersList[0].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[0].slide_width }}" height="{{ bannersList[0].slide_height }}" loading="lazy">
+                        </a>
+                    {% else %}
+                        <img src="{{ bannersList[0].slide_image }}" alt="{{ bannersList[0].slide_label ? bannersList[0].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[0].slide_width }}" height="{{ bannersList[0].slide_height }}" loading="lazy">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="banner-cinco-wrapper">
+                    <div class="box-img"data-position-banner="EXTRA 4 FASE 2">
+                        {% if bannersList[1].slide_link %}
+                            <a title="link banner cinco" href="{{ bannersList[1].slide_link }}" target="{{ bannersList[1].slide_target }}">
+                                <img src="{{ bannersList[1].slide_image }}" alt="{{ bannersList[1].slide_label ? bannersList[1].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[1].slide_width }}" height="{{ bannersList[1].slide_height }}" loading="lazy">
+                            </a>
+                        {% else %}
+                            <img src="{{ bannersList[1].slide_image }}" alt="{{ bannersList[1].slide_label ? bannersList[1].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[1].slide_width }}" height="{{ bannersList[1].slide_height }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                    <div class="box-img" data-position-banner="EXTRA 4 FASE 3">
+                        {% if bannersList[2].slide_link %}
+                            <a title="link banner cinco" href="{{ bannersList[2].slide_link }}" target="{{ bannersList[2].slide_target }}">
+                                <img src="{{ bannersList[2].slide_image }}" alt="{{ bannersList[2].slide_label ? bannersList[2].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[2].slide_width }}" height="{{ bannersList[2].slide_height }}" loading="lazy">
+                            </a>
+                        {% else %}
+                            <img src="{{ bannersList[2].slide_image }}" alt="{{ bannersList[2].slide_label ? bannersList[2].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[2].slide_width }}" height="{{ bannersList[2].slide_height }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="banner-cinco-wrapper">
+                    <div class="box-img" data-position-banner="EXTRA 4 FASE 4">
+                        {% if bannersList[3].slide_link %}
+                            <a title="link banner cinco" href="{{ bannersList[3].slide_link }}" target="{{ bannersList[3].slide_target }}">
+                                <img src="{{ bannersList[3].slide_image }}" alt="{{ bannersList[3].slide_label ? bannersList[3].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[3].slide_width }}" height="{{ bannersList[3].slide_height }}" loading="lazy">
+                            </a>
+                        {% else %}
+                            <img src="{{ bannersList[3].slide_image }}" alt="{{ bannersList[3].slide_label ? bannersList[3].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[3].slide_width }}" height="{{ bannersList[3].slide_height }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                    <div class="box-img" data-position-banner="EXTRA 4 FASE 5">
+                        {% if bannersList[4].slide_link %}
+                            <a title="link banner cinco" href="{{ bannersList[4].slide_link }}" target="{{ bannersList[4].slide_target }}">
+                                <img src="{{ bannersList[4].slide_image }}" alt="{{ bannersList[4].slide_label ? bannersList[4].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[4].slide_width }}" height="{{ bannersList[4].slide_height }}" loading="lazy">
+                            </a>
+                        {% else %}
+                            <img src="{{ bannersList[4].slide_image }}" alt="{{ bannersList[4].slide_label ? bannersList[4].slide_label : 'Banners da sessão banner cinco'}}" width="{{ bannersList[4].slide_width }}" height="{{ bannersList[4].slide_height }}" loading="lazy">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}

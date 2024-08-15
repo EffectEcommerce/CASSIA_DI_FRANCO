@@ -1,0 +1,20 @@
+{% set item = '' %}
+{% if not utils.is_mobile %}
+    {% set banner_id = 'home' %}
+{% else %}
+    {% set banner_id = 'extra1' %}
+{% endif %}
+
+{% set banner_element = banners[banner_id] %}
+{% if banner_element.slides %}
+    {% for slide in banner_element.slides %}
+        {% if loop.index == 1 %}
+            {% set item = slide.image %}
+        {% endif %}
+    
+    {% endfor %}
+{% else %}
+    {% set item = banner_element.src %}
+
+{% endif %} 
+<link rel="preload" href="{{item}}" as="image">

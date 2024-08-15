@@ -1,0 +1,115 @@
+.banner-duplo-vitrine{
+    width: 100%;
+    max-width: 1360px;
+    margin: 74px auto 64px;
+    .container-banner-duplo-vitrine{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        @include small{
+            align-items: center;
+            flex-direction: column;
+            gap: 32px;
+            padding: 0 1rem;
+        }
+        @include medium{
+            align-items: center;
+            flex-direction: column;
+            gap: 32px;
+            padding: 0 1rem;
+        }
+        .content-txt{
+            display: flex;
+            flex-direction: column;
+            margin: 0 0 174px;
+            width: 100%;
+            max-width: 389px;
+            @include small{
+                margin: 0;
+                max-width: 100%;
+            }
+            @include medium{
+                margin: 0;
+                max-width: 100%;
+            }
+            .subtittle-banner-duplo {
+                color: var(--c_vitrine_duplo_subtittle);
+                font-size:  1.125rem;
+            }
+            .desc-banner-duplo {
+                color: var(--c_vitrine_duplo_desc);
+                font-size: 1.125rem;
+                margin-top: 8px;
+                margin-bottom: 32px;
+            }
+            strong {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--c_vitrine_duplo_tittle)
+            }
+            a{
+                width: max-content;
+                button {
+                    background: var(--bg_vitrine_duplo_btn);
+                    color: var(--bg_vitrine_duplo_txt);
+                    border-radius: 2px;
+                    padding: 18px 24px;
+                    width: 100%;
+                    max-width: 220px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 10px;
+
+                    .txt-botao-banner-duplo {
+                        color: #FFF;
+                        font-size: 1rem !important;
+                        font-weight: 500;
+                    }
+                    &:hover {
+                        background-color: var(--bg_vitrine_duplo_btn_hover)
+                    }
+                }
+            }
+        }
+
+        .container-imagem-banner-duplo-vitrine {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            justify-content: space-between;
+            gap: 17px;
+            max-width: 901px;
+
+            @include small{
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 100%;
+            }
+
+            @include medium{
+                max-width: 100%;
+            }
+
+            .content-img{
+                width: 100%;
+                height: auto;
+
+                a{
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    //max-width: max-content;
+                    
+                    img{
+                        border-radius: 8px;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+        }
+    }
+}

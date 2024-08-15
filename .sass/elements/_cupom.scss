@@ -1,0 +1,101 @@
+.coupon-container {
+    display: flex;
+    border: 2px solid var(--bg_coupon_border_container);
+    position: fixed;
+    //width: 44px; 
+    //height: 155px;
+    height: 140px;
+    right: 0;
+    bottom: 30%; 
+    transition: width 0.2s ease-in-out;
+    z-index: 9999;
+    border-radius: 8px 0px 0px 8px;
+
+    &.active {
+        width: 231px;
+        right: 0; 
+    }
+    
+    &.right{
+        right: 0;
+    }
+
+    &.left{
+        left: 0;
+        right: auto;
+        flex-direction: row-reverse;
+    }
+    
+    .coupon-sidebar {
+        background-color: var(--bg_coupon_sidebar);
+        color: var(--c_coupon_sidebar);
+        writing-mode: vertical-lr;
+        text-align: center;
+        padding: 10px;
+        transform: rotate(180deg);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .coupon-details {
+        display: none;
+        text-align: center;
+        width: 100%;
+        opacity: 0; 
+        visibility: hidden;
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out; 
+        background-color: var(--bg_coupon_discount_container);
+
+        &.active{
+            display: block;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        h1 {
+            margin: 5px 0;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            color: var(--c_coupon_discount);
+        }
+
+        h2 {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            border: 2px dotted var(--bg_coupon_border);
+            width: 80%;
+            margin: 5px auto;
+            cursor: pointer;
+            color: var(--c_coupon_name);
+        }
+
+        p {
+            color: var(--c_coupon_discount);
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        button {
+            margin-top: 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border: 1px solid var(--bg_coupon_btn_border);
+            padding: 4px 10px;
+            border-radius: 2px;
+            color: var(--c_coupon_btn);
+            background-color: var(--bg_coupon_btn_copy);
+        }
+    }
+}
+

@@ -1,0 +1,44 @@
+<div class="container-instagram">
+    <div class="text-info-instagram">
+        <span class="titulo">{{ settings.instagram_1_title }}</span>
+        <span class="titulo-link">{{ settings.instagram_1_subtitle }}</span>
+        <span class="separator-title"></span>
+    </div>
+  
+    <div class="instagram-container" >
+      <div class="divisoria-box-instagram">
+        {% if settings.instagram_1_image %}
+          <a href="{{ settings.instagram_link_1 }}" class="instagram-icons-containers">
+            <img class="images-intagram" src="{{ asset(settings.instagram_1_image) }}" alt="imagem do instagram 1" width="213" height="213" loading="lazy">
+          </a>
+        {% endif %}
+        {% if settings.instagram_2_image %}
+          <a href="{{ settings.instagram_link_2 }}" class="instagram-icons-containers">
+            <img class="images-intagram" src="{{ asset(settings.instagram_2_image) }}" alt="imagem do instagram 2" width="213" height="213" loading="lazy">
+          </a>
+        {% endif %}
+        {% if settings.instagram_3_image %}
+          <a href="{{ settings.instagram_link_3 }}" class="instagram-icons-containers">
+            <img class="images-intagram" src="{{ asset(settings.instagram_3_image) }}" alt="imagem do instagram 3" width="213" height="213" loading="lazy">
+          </a>
+        {% endif %}
+      </div>
+      <div class="divisoria-box-instagram">
+        {% if settings.instagram_4_image %}
+          <a href="{{ settings.instagram_link_4 }}" class="instagram-icons-containers">
+            <img class="images-intagram" src="{{ asset(settings.instagram_4_image) }}" alt="imagem do instagram 4" width="213" height="213" loading="lazy">
+          </a>
+        {% endif %}
+        {% if settings.instagram_5_image %}
+          <a href="{{ settings.instagram_link_5 }}" class="instagram-icons-containers">
+            <img class="images-intagram" src="{{ asset(settings.instagram_5_image) }}" alt="imagem do instagram 5" width="213" height="213" loading="lazy">
+          </a>
+        {% endif %}
+        {% if settings.instagram_6_image %}
+          <a href="{{ settings.instagram_link_6 }}" class="instagram-icons-containers">
+            <img class="images-intagram" src="{{ asset(settings.instagram_6_image) }}" alt="imagem do instagram 6" width="213" height="213" loading="lazy">
+          </a>
+        {% endif %}
+      </div>
+    </div> 
+  </div>

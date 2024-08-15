@@ -1,0 +1,39 @@
+.regua-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    padding: 10px;
+    overflow: hidden;
+    max-width: 1360px !important;
+
+    &-containers {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;
+        justify-content: flex-start !important;
+        
+    }
+    &-texts {
+        display: flex;
+        flex-direction: column;
+
+        span:first-child{
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--c_regua_tittle);
+
+        }
+        span{
+            color: var( --c_regua_subtittle);
+            font-size: 14px;
+        }
+    }
+    &.section{
+        margin: 1rem auto 0;
+    }
+
+    .btn-next-regua-icons::after, .btn-prev-regua-icons::after{
+        font-size: 20px;
+    }
+}
+

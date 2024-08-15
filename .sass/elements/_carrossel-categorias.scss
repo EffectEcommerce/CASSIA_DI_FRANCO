@@ -1,0 +1,114 @@
+a.category-link {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   gap: 16px;
+}
+.category-title {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+    color: #000;
+    width: 100%;
+    max-width: 180px;
+    text-transform: uppercase;
+}
+.category-title p{
+    line-break: anywhere;
+}
+.category-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 148px;
+    height: 148px;
+    border: 2px solid var(--c_borda_top_categorias_card);
+    border-radius: 50%;
+    margin: 10px;
+    box-sizing: border-box
+}
+
+.title-cat-vitrine {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+    @include small{
+        font-size: 20px;
+    }
+}
+.container-cat-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.container-cat-title::after {
+   content: '';
+    width: 60px;
+    height: 2px;
+    background: var(--c_showcase_title_detail);
+    margin-top: 10px
+}
+.category-image {
+    width: 136px;
+    height: 136px;
+    overflow: hidden;
+    border-radius: 50%
+}
+.category-image img {
+    width: 100%;
+    height: 100%
+}
+.cat-vitrine-container {
+    width: 100%;
+    max-width: 1360px;
+    margin: 64px auto 32px;
+    overflow: hidden;
+}
+.container-top-categories {
+    position: relative;
+    width: 100%;
+    max-width: 1360px;
+    display: flex;
+    justify-content: center;
+}
+.cat-vitrine.swiper-container {
+    display: flex;
+    overflow: hidden;
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+}
+.cat-vitrine.swiper-container #pag-carrossel {
+    margin-top: 16px;
+}
+.cat-vitrine.swiper-container .swiper-button-next, .cat-vitrine.swiper-container .swiper-button-prev{
+    top:40%;
+}
+.cat-vitrine.swiper-container div#pag-carrossel .swiper-pagination-bullet{
+    width: 22px;
+    height: 9px;
+    border-radius: 5px;
+}
+
+@media(max-width:490px){
+    .category-card{
+        width: 96px;
+        height:96px;
+    }
+    .category-image{
+        width: 88px;
+        height: 88px;
+    }
+    .category-title{
+        font-size: 14px;
+        max-width: 100px;
+    }
+}

@@ -1,0 +1,97 @@
+
+{% element 'snippets/banner-line' { 'banner_id': 'home', 'banner_type': 'slides' } %} 
+
+{% if settings.show_regua_icons %}
+    {% element 'snippets/regua-beneficios' %}
+{% endif %} 
+
+{% element 'snippets/carrossel-categorias' %}
+
+{# {% element 'snippets/top-categorias' %} #}
+
+{% element 'home-showcase' { 
+    'title_showcase' : settings.showcase_title_text_1,
+    'subtitle' : settings.showcase_subtitle_text_1,
+    'rand' : settings.showcase_rand_products, 
+    'type' : settings.showcase_type_1, 
+    'quantity' : settings.showcase_quantity_1, 
+    'vitrine_especial' : settings.vitrine_especial,
+    
+} %} 
+
+{% if settings.show_banner_duplo %}
+    {% element 'snippets/banner-duplo-news' %}
+{% endif %}
+
+{% element 'home-showcase' { 
+
+    'title_showcase' : settings.showcase_title_text_2,
+    'subtitle' : settings.showcase_subtitle_text_2,
+    'rand' : settings.showcase_rand_products, 
+    'type' : settings.showcase_type_2, 
+    'quantity' : settings.showcase_quantity_2,
+    'vitrine_especial' : settings.vitrine_especial_2,
+    'model': '2',
+} %} 
+
+{# {% element 'snippets/banner-cinco' %} #}
+
+{% element 'snippets/banner-quatro' %}
+
+
+{% element 'home-showcase' { 
+
+    'title_showcase' : settings.showcase_title_text_3,
+    'subtitle' : settings.showcase_subtitle_text_3,
+    'rand' : settings.showcase_rand_products, 
+    'type' : settings.showcase_type_3, 
+    'quantity' : settings.showcase_quantity_3,
+    'vitrine_especial' : settings.vitrine_especial_3,
+    'model': '3',
+} %} 
+{% if settings.show_instagram_btn %}
+    {% element 'snippets/instagram_botao' %}
+{% endif %}
+
+{% for pages in pages.custom %} 
+    {% if pages.info == "depoimentos_de_clientes" and settings.show_reviews %}
+        <section class="section reviews" data-slides="reviews">
+            <h2 class="section-title">Depoimentos</h2>
+            <div class="reviews-container">
+                {% element 'CustomerReview.reviews' %}
+                <button class="reviews-button">
+                    <a class="button2" href="/depoimentos-de-clientes" title="Ver mais depoimentos" rel="next" target="_self">
+                        Ver mais depoimentos
+                    </a>
+                </button>
+            </div>
+        </section>
+    {% endif %} 
+{% endfor %} 
+
+{% if settings.show_blog %}
+    {% for page in pages.custom %}
+        {% if page.info == "noticias" %}
+            <section class="section news slide-has-dots">
+                <div class="title-container">
+                    <span class="subtitulo-vitrine">{{ settings.title_top_blog }}</span>
+                    <h2>
+                        {{ settings.title_bottom_blog }}
+                    </h2>
+                    <span class="separator-title"></span>
+                </div>
+                <div class="news-container">
+                    <ul class="news-content"></ul>
+                </div>
+            </section>
+        {% endif %} 
+    {% endfor %}
+{% endif %}
+{% if settings.show_instagram %}
+    {% element 'snippets/instagram' %}
+{% endif %}
+
+{% element 'snippets/banner-line' { 'banner_id': 'bottom', 'banner_type': 'container' } %}
+
+
+

@@ -1,0 +1,68 @@
+{% set totalIcons = 0 %}
+<div class="regua-icons section" style="position: relative;">
+  <div class="swiper-wrapper">
+    {% if settings.regua_1_image and settings.regua_icon_1_title and settings.regua_icon_1_subtitle %}
+    {% set totalIcons = totalIcons + 1 %}
+      <div class="regua-icons-containers swiper-slide">
+        <img src="{{ asset(settings.regua_1_image) }}" alt="icon de caminhao" height="48px" width="48px"/>
+            <div class="regua-icons-texts">
+              <span>{{ settings.regua_icon_1_title }}</span>
+              <span>{{ settings.regua_icon_1_subtitle }}</span>
+            </div>
+      </div>
+    {% endif %}
+    {% if settings.regua_2_image and settings.regua_icon_2_title and settings.regua_icon_2_subtitle %}
+    {% set totalIcons = totalIcons + 1 %}
+      <div class="regua-icons-containers swiper-slide">
+          <img src="{{ asset(settings.regua_2_image) }}" alt="icon de cartao" height="48px" width="48px"/>
+            <div class="regua-icons-texts">
+              <span>{{ settings.regua_icon_2_title }}</span>
+              <span>{{ settings.regua_icon_2_subtitle }}</span>
+            </div>
+      </div>
+    {% endif %}
+    {% if settings.regua_3_image and settings.regua_icon_3_title and settings.regua_icon_3_subtitle %}
+    {% set totalIcons = totalIcons + 1 %}
+      <div class="regua-icons-containers swiper-slide">
+        <img src="{{ asset(settings.regua_3_image) }}" alt="icon de medalha" height="48px" width="48px"/>
+            <div class="regua-icons-texts">
+              <span>{{ settings.regua_icon_3_title }}</span>
+              <span>{{ settings.regua_icon_3_subtitle }}</span>
+            </div>
+      </div>
+    {% endif %}
+    {% if settings.regua_4_image and settings.regua_icon_4_title and settings.regua_icon_4_subtitle %}
+    {% set totalIcons = totalIcons + 1 %}
+      <div class="regua-icons-containers swiper-slide">
+        <img src="{{ asset(settings.regua_4_image) }}" alt="icon de atendimento" height="48px" width="48px"/>
+            <div class="regua-icons-texts">
+              <span>{{ settings.regua_icon_4_title }}</span>
+              <span>{{ settings.regua_icon_4_subtitle }}</span>
+            </div>
+      </div>
+    {% endif %}
+    {% if settings.regua_5_image and settings.regua_icon_5_title and settings.regua_icon_5_subtitle %}
+    {% set totalIcons = totalIcons + 1 %}
+      <div class="regua-icons-containers swiper-slide">
+        <img src="{{ asset(settings.regua_5_image) }}" alt="icon de atendimento" height="48px" width="48px"/>
+            <div class="regua-icons-texts">
+              <span>{{ settings.regua_icon_5_title }}</span>
+              <span>{{ settings.regua_icon_5_subtitle }}</span>
+            </div>
+      </div>
+    {% endif %}
+    
+  </div>
+
+  {% if utils.is_mobile %}
+    <div class="swiper-button-prev btn-prev-regua-icons"></div>
+    <div class="swiper-button-next btn-next-regua-icons"></div>
+  {% endif %}
+</div>
+
+<script>
+    window.totalIcons = {
+        total: '{{ totalIcons }}',
+    };
+
+</script>
